@@ -165,14 +165,12 @@ void loop()
     }
     static char temperatureTemp[7];
     static char humTemp[8];
-    static char cahaya[9];
     dtostrf(temperature, 4, 2, temperatureTemp);
     dtostrf(humidity, 4, 2, humTemp);
     Serial.println(temperatureTemp);
     Serial.println(humTemp);
     client.publish("monitoring/suhu", temperatureTemp);
     client.publish("monitoring/humadity", humTemp);
-    client.publish("cahaya/ldr", cahaya);
   }
   lcd.setCursor(0,0);
   lcd.print("Connected");
